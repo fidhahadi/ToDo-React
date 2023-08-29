@@ -4,6 +4,10 @@ import { useState } from 'react';
 
 
 function App() {
+ 
+
+  const month = new Date().toLocaleDateString('default', { month: 'long' });
+  const date = new Date().getDate();
 
   const [toDos, settoDos] = useState([]); //array to store the state of list of items
   const [toDo, settoDo] = useState(""); //to store the state each individual tast which is stored as string
@@ -16,7 +20,7 @@ function App() {
     </div>
     <div className="subHeading">
       <br />
-      <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
+      <h2>Whoop, it's {date}th of {month}🌝 ☕ </h2>
     </div>
     <div className="input">
       <input type="text" onChange={(e) => settoDo(e.target.value)} placeholder="🖊️ Add item..." /> {/* taking each list item from the input and storing in setodo */}
